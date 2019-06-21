@@ -1,25 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { BrowserRouter as Router, Route} from "react-router-dom";
+import Catalog from "./template/catalog/Catalog";
+import Homepage from "./template/homepage/Homepage";
+import Detail from "./template/product/Detail";
+import List from "./template/list/List";
+import Header from "./components/header/Header";
+import "./App.css"
 
-const App: React.FC = () => {
+const App: React.SFC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <Router>
+      <div>
+        <Header />
+        <Route exact={true} path="/homepage" component={Homepage} />
+        <Route exact={true} path="/catalog" component={Catalog} />
+        <Route exact={true} path="/product/:slug" component={Detail} />
+        <Route exact={true} path="/list" component={List} />
+      </div>
+    </Router>
   );
 }
 

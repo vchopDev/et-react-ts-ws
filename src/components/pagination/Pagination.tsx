@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import "./Pagination";
-import { IProduct } from './../../data/ProductInterface';
+import { IProduct } from "../../data/ProductInterface";
 
 interface IPaginationProps {
   data: IProduct[];
